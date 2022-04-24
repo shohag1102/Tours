@@ -1,10 +1,8 @@
 import Tours from "./components/Tours";
-import Tour from "./components/Tour";
 import Loading from "./components/Loading";
 import { useEffect, useState } from "react";
 
 const url = 'https://course-api.com/react-tours-project'
-// let url ='http://api.icndb.com/jokes/random'
 
 
 function App() {
