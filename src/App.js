@@ -1,60 +1,50 @@
-import Tours from "./components/Tours";
-import Loading from "./components/Loading";
-import { useEffect, useState } from "react";
-
-const url = 'https://course-api.com/react-tours-project'
-
+import { useState } from "react";
+import data from "./components/Data";
+import Card from "./components/Card";
+import Header from "./components/Header";
+// import Cards from "./components/Cards";
 
 function App() {
-  const [loading, setLoading] = useState(false)
-  const [tours, setTours] =useState([])
+  let [persons, setPersons] = useState(data[0])
+  // console.log(persons);
 
-  const removeTour = (id)=>{
-    let newTours = tours.filter((tour)=>tour.id !== id)
-    setTours(newTours)
-  }
+    const changeLeft = (id)=>{
+      // console.log('current id',id);
+      
+      if(id===0){
+        id=4
+      }
+      id-=1
+      setPersons(data[id])
+      // console.log('changed id',id);
+      
+    }
 
-  const fetchTours = async()=>{
-    setLoading(true)
+    const changeRight = (id)=>{
+      // console.log('clicked id',id);
+      id+=1
+      if(id===4){
+        id=0
+      }
+      setPersons(data[id])
+    }
 
-    const response = await fetch(url)
-    const tours = await response.json()
-    setTours(tours) 
-    setLoading(false)
-
-  }
-
-  useEffect(()=>{
-    fetchTours()
-  },[])
-
-  console.log(tours[0]);
-
-  if(loading){
-    return(
-      <main>
-        <Loading/>
-      </main>
-    )
-  }
-
-  if(tours.length===0){
-    return(
-      <main>
-        <h3>No Tours Left</h3>
-        <div className="btn-div">
-        <button className="refresh_btn"
-        onClick={fetchTours}>Refresh</button>
-        </div>
-      </main>
-    )
-  }
-
+    function randomChange(id){
+      console.log('clicked')
+      const randomNumber = Math.floor(Math.random()*3+1)
+      
+      setPersons(data[randomNumber])
+      
+    }
+  
   return (
-    <main >
-      <Tours tours={tours} removeTour={removeTour}/>
-    </main>
-  );
+    <div  className="container">
+      <Header/>
+      <Card {...persons} changeLeft={changeLeft}
+      changeRight={changeRight}
+      randomChange={randomChange}/>
+    </div>
+  )
 }
 
 export default App;

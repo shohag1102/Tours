@@ -1,134 +1,123 @@
 *{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  background-color: #F1F5F8;
-}
-
-/* main{
-  text-align: center;
-  font-size: 40px;
-  margin: 100px auto;
-} */
-.loading{
-  font-size: 30px;
-  margin: 100px auto;
-  text-align: center;
-}
-.loading h1{
-  font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    background-color: #F1F5F8;
+    text-align: center;
 }
 
 h2{
-  font-size: 40px;
-  margin: 20px auto;
-  text-align: center;
-  font-weight: 600;
+    font-size: 40px;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: 600;
 }
 h2::after{
-  content: '';
-  display: block;
-  border: 2px solid #49A6E9;
-  background-color: #49A6E9;
-  width: 90px;
-  margin: 10px auto;
-  margin-bottom: 70px;
+    content: '';
+    display: block;
+    border: 2px solid #49A6E9;
+    background-color: #49A6E9;
+    width: 90px;
+    margin: 10px auto;
+    margin-bottom: 70px;
 }
 
 .container{
-  width: 50%;
-  margin: 60px auto;
-  /* background-color: antiquewhite; */
+    width: 640px;
+    /* width: 420px; */
+    margin: 150px auto;
+    /* background-color: antiquewhite; */
 }
 .card{
-  width: 600px;
-  margin: 0 auto;
-  height: auto;
-  background-color: white;
-  /* background-color: aquamarine; */
-  border-radius: 5px;
-  margin-bottom: 40px;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    height: auto;
+    padding: 20px 70px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2), 4px 3px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
 }
-.img-div{
-  width: 600px;
-  height: 330px;
-}
+
 .card img{
-  width: 100%;
-  height: 310px;
-  object-fit: cover;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.desc_head{
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 30px 10px 30px;
-}
-.desc_head h4{
-  letter-spacing: 1px;
-}
-.desc_head > p{
-  background-color: #49a6e927;
-  color: #49A6E9;
-  padding: 1px 8px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 5px;
+    right: 7px
 }
 
-.desc-body{
-  padding: 20px 30px 10px 30px;
-  color: #617F9B;
+.img{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    background-color: #49A6E9;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
 }
+
+.job{
+    color: #49A6E9;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
 .desc-body p{
-  line-height: 25px;
-  font-size: 15px;
-}
-a{
-  text-decoration: none;
-  color: #49A6E9;
-  cursor: pointer;
+    margin-bottom: 10px;
+    color: gray;
+    font-size: 15px;
+    letter-spacing: 0px;
+    line-height: 25px;
 }
 
-.btn-div{
-  display: grid;
-  place-items: center;
+.pagination{
+    margin-bottom: 15px;
 }
 
-.delete-btn{
-  padding: 5px 35px;
-  color: brown;
-  font-size: 16px;
-  letter-spacing: 1px;
-  border: 1px solid brown;
-  background-color: transparent;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  margin-top: 7px;
-  cursor: pointer;
+.fa-angle-left, .fa-angle-right{
+    color: #49A6E9;
+    font-size: 23px;
+    cursor: pointer;
+}
+.fa-angle-left{
+    margin-right: 21px;
+}
+.fa-quote-right{
+    color: #49A6E9;
+    /* color: red; */
+    font-size: 40px;
+    position: absolute;
+    left: -15px;
+    top: 20px;
+    z-index: 1;
+    /* background-color: red;
+    padding: 5px;
+    border-radius: 50%; */
 }
 
-h3{
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 500;
-  margin-top: 100px;
-  margin-bottom: 10px;
+button{
+    color: #49A6E9;
+    background-color: #49a6e921;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
-.refresh_btn{
-  padding: 10px 25px;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: #49A6E9;
-  border: none;
-  outline: none;
+
+button:hover{
+    color: rgb(26, 25, 25);
+    transition: all ease 1s;
+    background-color: #49a6e9;
 }
